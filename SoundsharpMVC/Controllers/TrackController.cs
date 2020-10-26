@@ -34,7 +34,17 @@ namespace SoundsharpMVC.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
+                int hours = int.Parse(collection["Hours"]);
+                int minutes = int.Parse(collection["Minutes"]);
+                int seconds = int.Parse(collection["Seconds"]);
+
+                Track track = new Track();
+                track.Name = collection["Name"];
+                track.Artist = collection["Artist"];
+                track.AlbumSource = collection["AlbumSource"];
+                track.Length = new Time(hours, minutes, seconds);
+                track.Style = (Category)Enum.Parse(typeof(Category), collection["Style"]);
+                trackList.Add(track);
 
                 return RedirectToAction("Index");
             }
