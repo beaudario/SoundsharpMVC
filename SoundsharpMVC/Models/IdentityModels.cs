@@ -29,5 +29,7 @@ namespace SoundsharpMVC.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<AudioDevices.Tracks.Track> Tracks { get; set; }
     }
 }
