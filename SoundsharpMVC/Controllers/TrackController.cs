@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SoundsharpMVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,7 @@ namespace SoundsharpMVC.Controllers
         // GET: Track
         public ActionResult Index()
         {
-            return View();
+            return View(trackList);
         }
 
         // GET: Track/Details/5
@@ -83,6 +84,16 @@ namespace SoundsharpMVC.Controllers
             catch
             {
                 return View();
+            }
+        }
+
+        private static List<Track> trackList;
+
+        public TrackController()
+        {
+            if(trackList == null)
+            {
+                trackList = DataProvider.GenerateDefaultTracks();
             }
         }
     }
