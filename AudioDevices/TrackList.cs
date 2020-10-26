@@ -77,7 +77,7 @@ namespace AudioDevices.Tracks
 
                 foreach(var track in tracks)
                 {
-                    seconds += track.GetTimeInSeconds();
+                    seconds += track.GetLengthInSeconds();
                 }
 
                 return new Time(seconds);

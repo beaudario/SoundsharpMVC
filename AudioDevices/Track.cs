@@ -44,7 +44,7 @@ namespace AudioDevices.Tracks
             return length;
         }
 
-        public int GetTimeInSeconds()
+        public int GetLengthInSeconds()
         {
             return length.Seconds + (length.Minutes * 60) + (length.Hours * 3600);
         }
